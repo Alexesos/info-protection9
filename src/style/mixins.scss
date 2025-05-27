@@ -1,0 +1,28 @@
+@use 'sass:math';
+
+//Percent
+@function percent($px, $from: 100) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+//REM
+@function toRem($px, $current: 16) {
+	$result: math.div($px, $current) + rem;
+	@return $result;
+}
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+@mixin adaptiveValue($property, $maxSize, $minSize, $maxWidth, $minWidth) {
+    $range: $maxSize - $minSize;
+    $screenRange: $maxWidth - $minWidth;
+    $coefficient: calc($range / ($maxWidth - $minWidth));
+  
+    #{$property}: calc(#{$minSize} + (#{$coefficient} * (100vw - #{$minWidth})));
+
+	@media (min-width: $maxWidth) {
+		#{$property}: $maxSize;
+	}
+}

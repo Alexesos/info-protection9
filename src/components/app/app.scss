@@ -1,0 +1,139 @@
+.main {
+    display: flex;
+    align-items: center;
+
+    &__container {
+        flex: 1 1 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #606060;
+        border-radius: 6px;
+    }
+
+    &__start,
+    &__mid,
+    &__end {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px 0;
+    }
+
+    &__start {
+
+    }
+
+    &__mid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__end {
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid #606060;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    &__button {
+        border: 1px solid #606060;
+        padding: 5px 10px;
+        border-radius: 4px;
+        background: #efefef;
+        transition: .3s ease;
+
+        &:hover {
+            filter:contrast(.9);
+            scale: 1.01;
+        }
+    }
+
+    &__downloads {
+        display: flex;
+        gap: 5px;
+    }
+
+    &__stats {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: scroll;
+        overflow-x: scroll;
+
+        span {
+            padding: 10px;
+            flex: 1 1 auto;
+            max-width: 100%;
+            overflow: scroll;
+            overflow-x: scroll;
+        }
+    }
+
+    &__hash {
+        border: 1px solid #606060;
+        border-radius: 4px;
+        padding: 5px 10px;
+        background: #efefef;
+
+        &.valid {
+            color: #7dca00;
+        }
+        &.invalid {
+            color: #BA1F33;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__item {
+        cursor: pointer;
+        border: 1px solid #606060;
+        border-radius: 4px;
+        padding: 5px 10px;
+        background: #efefef;
+        transition: .3s ease;
+
+        &.active {
+            background: #172A3A;
+            border-color: #404040;
+            color: #fff;
+        }
+
+        &:hover {
+            filter: contrast(.9);
+            scale: 1.01;
+        }
+    }
+}
+
+// hi
