@@ -35,7 +35,7 @@ const FileUploader = ({ title, setFileText, content }) => {
     const isValid = (text) => {
         const valid = /^[0-9,]*$/.test(text);
 
-        if (title === 'Ключ') {
+        if (title === 'Ключ' || title === 'Підпис') {
             if (!valid) {
                 alert('Невірний формат ключа');
                 return false;

@@ -37,9 +37,21 @@ const Service = () => {
         return data.isValid;
     }
     
+    const writeEQS2 = async (message) => {
+        const data = await makeRequest('/write/EQS2', { message });
+        return data.result;
+    }
+
+    const readEQS2 = async (message, publicKey, signature) => {
+        const data = await makeRequest('/read/EQS2', { message, publicKey, signature });
+        return data.isValid;
+    }
+
     return { 
         writeEQS,
-        readEQS
+        readEQS,
+        writeEQS2,
+        readEQS2
     };
 };
 
