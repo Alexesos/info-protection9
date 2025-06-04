@@ -32,8 +32,8 @@ const Service = () => {
         return data;
     }
 
-    const readEQS = async (message, keys) => {
-        const data = await makeRequest('/read/EQS', { message, keys });
+    const readEQS = async (m, s, e, n) => {
+        const data = await makeRequest('/read/EQS', { m, s, e, n });
         return data.isValid;
     }
     

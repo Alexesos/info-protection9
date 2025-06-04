@@ -49,12 +49,16 @@ const App = () => {
 
     const writeEQSCall = async () => {
         const res = await writeEQS(message);
-        hashTableToArray(res._hashTable);
-        setKeys([res.keys.e, res.keys.n]);
+        console.log(res);
+        setHash(res.h);
+        setKeys([res.e, res.n]);
+        setEncoded([res.h, res.s]);
     }
 
     const readEQSCall = async () => {
-        const res = await readEQS(message, keys);
+        const ms = message.split(',');
+        console.log(ms);
+        const res = await readEQS(ms[0], ms[1], keys[0], keys[1]);
         setHashCheck(res);
         console.log(res);
     }
@@ -123,7 +127,7 @@ const App = () => {
                                     className="main__button"
                                     onClick={() => writeCall()}    
                                 >
-                                    Отримати підписане повідомлення та ключ
+                                    Підписати
                                 </button>
                                 <button 
                                     className="main__button"
